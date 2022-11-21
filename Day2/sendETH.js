@@ -9,9 +9,8 @@ const myBalance = await goerliSigner.getBalance();
 console.log("My balance is ", ethers.utils.formatEther(myBalance));
 
 // now time to send some Goerli ETH 
-//const receiverAddress =  "0x165A190a652F3B4024DF2C8F669A7DF906959b4A";
 
-const receiverAddress = await mainnetProvider.resolveName("dimonvsitf.eth")
+const receiverAddress = await mainnetProvider.resolveName("dimonvsitf.eth") //finding an address based on ENS name
 console.log("Sending ether to", receiverAddress);
 
 const tx = await goerliSigner.sendTransaction(
