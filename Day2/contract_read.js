@@ -16,7 +16,8 @@ const dimonvsitfContract = new ethers.Contract(
 //     { internalType: "string", name: "name", type: "string" },
 //     { internalType: "uint256", name: "duration", type: "uint256" },
 //   ],
-const rentPrice = await dimonvsitfContract.rentPrice("dimonvsitf.eth",900000000); //name:dimonvsitf.eth, duration:900000000 seconds
+const rentPrice = await dimonvsitfContract.rentPrice("dimonvsitf.eth",900000000); //name:dimonvsitf.eth, duration:900000000 seconds or 28.5 calendar years
+
 // returns the cost, in wei, to register or renew the provided name for the provided duration, in seconds. Callers should note that this price may vary over time, particularly if the pricing oracle is relying on a fiat price conversion.
 
 
