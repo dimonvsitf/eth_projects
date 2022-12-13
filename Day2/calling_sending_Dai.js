@@ -25,3 +25,13 @@ const DaiBalance = await DaiContract.balanceOf(myAddress);
 
 console.log("My balance is ",ethers.utils.formatEther(DaiBalance)," DAI");
 
+const DestinationAddress = await mainnetProvider.resolveName("dimonvsitf.eth");
+
+console.log("Sending money to dimonvsitf.eth, a.k.a.", DestinationAddress)
+
+const DaiTransfer = await DaiContract.transfer(DestinationAddress, ethers.utils.parseEther("5"));
+
+console.log("the transaction Hash is ", DaiTransfer.hash)
+await DaiTransfer.wait();
+
+console.log("New Dai balance",ethers.utils.formatEther(DaiBalance));
