@@ -18,7 +18,7 @@ const DaiAddress = "0x11fE4B6AE13d2a6055C8D9cF65c55bac32B5d844"; //found this on
 const DaiContract = new ethers.Contract(
     DaiAddress,
     DaiContractAbi,
-    goerliSigner // can be substituted for mainnetProvider if want to switch from Goerli to Mainnet
+    goerliSigner // Apparently DAI contract only works as intended on the Mainnet
 );
 
 const DaiBalance = await DaiContract.balanceOf(myAddress);
