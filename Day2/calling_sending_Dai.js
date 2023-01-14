@@ -3,7 +3,7 @@ import { getProvider, getSigner } from "./utils.js";
 import DaiContractAbi from "./abi/DaiAbi.js"
 
 const mainnetProvider = getProvider(); //connecting to Mainnet via an RPC provider (Infura) 
-const goerliSigner = getSigner(); //connecting to signer wallet via a private key
+const goerliSigner = getSigner(); //connecting to signer wallet via a private key (on Goerli). To get mainnet signer: getSigner(true);
 
 const myAddress = goerliSigner.address;
 const myBalance = await goerliSigner.getBalance();
@@ -18,7 +18,7 @@ const DaiAddress = "0x11fE4B6AE13d2a6055C8D9cF65c55bac32B5d844"; //found this on
 const DaiContract = new ethers.Contract(
     DaiAddress,
     DaiContractAbi,
-    goerliSigner // Apparently DAI contract only works as intended on the Mainnet
+    goerliSigner 
 );
 
 const DaiBalance = await DaiContract.balanceOf(myAddress);
